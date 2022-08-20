@@ -9,8 +9,7 @@ import { ethers } from 'ethers'
 import { useState, useEffect } from 'react'
 
 import React from "react";
-import { Nav, NavLink, NavMenu } 
-    from "./NavbarElements";
+
 
 function App() {
 
@@ -19,11 +18,20 @@ function App() {
   const [currentAccount, setCurrentAccount] = useState('')
   const [input, setInput] = useState('')
   const [tasks, setTasks] = useState([])
+  const [isShown, setIsShown] = useState(false);
 
   useEffect(() => {
     connectWallet()
     getAllTasks()
   }, [])
+
+  const handleClick = event => {
+    // 👇️ toggle shown state
+    setIsShown(current => !current);
+
+    // 👇️ or simply set it to true
+    // setIsShown(true);
+  };
 
   const connectWallet = async () => {
     try {
@@ -137,26 +145,41 @@ function App() {
     }
   }
 
-  const Navbar = () => {
+  function Home() {
     return (
-      <>
-        <Nav>
-          <NavMenu>
-            <NavLink to="/about" activeStyle>
-              About
-            </NavLink>
-          </NavMenu>
-        </Nav>
-      </>
+        <h1>This is the homepage</h1>
     );
-  };
+}
   
   return (
     <div className=''>
+    <div>
+      <button onClick={handleClick}>About</button>
+
+      {/* 👇️ show elements on click */}
+      {isShown && (
+        <div>
+          <h2>Welcome</h2>
+          <p>Input your vaccines here to store the data on the blockchain.</p>
+        </div>
+      )}
+
+      {/* 👇️ show component on click */}
+      {isShown && <Box />}
+      
+    </div>
       {!isUserLoggedIn ? <ConnectWalletButton connectWallet={connectWallet} /> :
         correctNetwork ? <TodoList tasks={tasks} input={input} 
         setInput={setInput} addTask={addTask} 
         deleteTask={deleteTask}/> : <WrongNetworkMessage />}
+    </div>
+  );
+}
+
+function Box() {
+  return (
+    <div>
+      <h2></h2>
     </div>
   );
 }
