@@ -159,8 +159,28 @@ function App() {
       {/* 👇️ show elements on click */}
       {isShown && (
         <div>
-          <h2>Welcome</h2>
-          <p>Input your vaccines here to store the data on the blockchain.</p>
+          <h2>Welcome, the place to store all your vaccine data.</h2>
+          <p></p>
+          <p>Input vaccine info, date and location to remember them forever.</p>
+          <p>Your data is completely stored on the blockchain.</p>
+          <p>Why?</p>
+          <p>1) ultra-secure encryption and decentralization.</p>
+          <p> 2) You OWN the data that you store on the blockchain. 
+          There's no corporation that makes you sign privacy policies and secretly  monetizes your data. You have the rights, all of them.</p>
+          <h2>Instructions: </h2>
+          <p></p>
+          <p>- To use this application you need a browser interface to the blockchain. You can easily do this with the Metamask browser extension or mobile app.</p>
+          <p>- Head to https://metamask.io/ to download.</p>
+          <p>- Set up your blockchain wallet with Metamask</p>
+          <p>- In Metamask, select the Ethereum main network and make sure your account is connected to this site.</p>
+          <p>- Send yourself a small amount of the cryptocurrency Ethereum (each input/deletion costs on average 1 USD and goes directly to the "miners" who calculate the Keccak-256 algorithm to encrypt your data.)</p>
+          <p>- Store your vaccine data and come back whenever.</p>
+          <p></p>
+          <p></p>
+          <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '10vh'}}>
+              <p> Created by Robert Kottelin </p>
+          </div>
+          <p></p>
         </div>
       )}
 
