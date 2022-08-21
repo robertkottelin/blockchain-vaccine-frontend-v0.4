@@ -172,13 +172,14 @@ function App() {
           <p>- To use this application you need a browser interface to the blockchain. You can easily do this with the Metamask browser extension or mobile app.</p>
           <p>- Head to https://metamask.io/ to download.</p>
           <p>- Set up your blockchain wallet with Metamask</p>
-          <p>- In Metamask, select the Ethereum main network and make sure your account is connected to this site.</p>
+          <p>- In Metamask, select the Ethereum rinkeby test network and make sure your account is connected to this site.</p>
           <p>- Send yourself a small amount of the cryptocurrency Ethereum (each input/deletion costs on average 1 USD and goes directly to the "miners" who calculate the Keccak-256 algorithm to encrypt your data.)</p>
           <p>- Store your vaccine data and come back whenever.</p>
           <p></p>
           <p></p>
           <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '10vh'}}>
               <p> Created by Robert Kottelin </p>
+              {/* <p> This is a prototype. </p> */}
           </div>
           <p></p>
         </div>
